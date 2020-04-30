@@ -1,10 +1,11 @@
 class Api::V1::BlogsController < ApplicationController
-  def show
+	def show
   	@blog = Blog.find(params[:id])
   end
 
   def index
-  	@blogs = Blog.all
+  	#@blogs = Blog.all
+    render json: Blog.all
   end
 
   def new
